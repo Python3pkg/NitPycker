@@ -63,7 +63,7 @@ class FrozenTbFrame:
         self.__f_globals = tb_frame.f_globals.copy()
         self.__f_code = FrozenFCode(tb_frame.f_code)
         to_remove = []
-        for key, item in self.__f_globals.items():
+        for key, item in list(self.__f_globals.items()):
             if "module" in str(item):
                 to_remove.append(key)
 

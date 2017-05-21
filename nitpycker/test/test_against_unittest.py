@@ -46,7 +46,7 @@ def get_function_name(file, kwargs):
     """
     return "test_{}{}".format(
             os.path.splitext(file)[0].replace("check_", ""),
-            "_" + "_".join(["{}_{}".format(key, value) for key, value in kwargs.items()] if len(kwargs) else "")
+            "_" + "_".join(["{}_{}".format(key, value) for key, value in list(kwargs.items())] if len(kwargs) else "")
         ).strip("_")
 
 
